@@ -27,6 +27,11 @@ public class Dealer {
     )
     private String name;
 
+    @Column(
+        nullable=false
+    )
+    private String password;
+
     @Enumerated(EnumType.STRING)
     @Column(
         length=20,
@@ -62,6 +67,9 @@ public class Dealer {
 
     public String getName(){return name;}
     public void setName(String name){this.name=name;}
+
+    public String getPassword(){return password;}
+    public void setPassword(String password){this.password=password;}
 
     public DealerType getType(){return type;}
     public void setType(DealerType type){this.type=type;}

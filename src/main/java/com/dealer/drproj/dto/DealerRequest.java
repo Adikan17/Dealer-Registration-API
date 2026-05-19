@@ -15,6 +15,9 @@ public class DealerRequest {
     )
     private String msisdn;
 
+    @NotBlank(message="Password is a mandatory field.")
+    private String password;
+
     @NotNull(message="Type is a mandatory feild.")
     private DealerType type;
 
@@ -25,6 +28,9 @@ public class DealerRequest {
 
     public String getMsisdn(){return msisdn;}
     public void setMsisdn(String msisdn){this.msisdn=msisdn;}
+
+    public String getPassword(){return password;}
+    public void setPassword(String password){this.password=password;}
 
     public DealerType getType(){return type;}
     public void setType(DealerType type){this.type=type;}

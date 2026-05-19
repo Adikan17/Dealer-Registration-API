@@ -36,7 +36,7 @@ public class DealerController {
     }
 
     @PatchMapping("/{msisdn}/{status}")
-    public ResponseEntity<DealerResponse>  updateDealerStatus(@PathVariable String msisdn, @PathVariable String status){
-        return ResponseEntity.ok(service.updateDealerStatus(msisdn, status));
+    public ResponseEntity<DealerResponse>  updateDealerStatus(@PathVariable String msisdn, @PathVariable String status, @RequestParam String password){
+        return ResponseEntity.ok(service.updateDealerStatus(msisdn, status, password));
     }
 }
