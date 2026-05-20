@@ -23,11 +23,8 @@ public class DealerController {
     }
 
     @GetMapping
-    public ResponseEntity<List<DealerResponse>> getDealers(@RequestParam(required = false) String type){
-        if(type!=null){
-            return ResponseEntity.ok(service.getDealerByType(type));
-        }
-        return ResponseEntity.ok(service.getDealers());
+    public ResponseEntity<List<DealerResponse>> getDealers(@RequestParam(required = false) String type,@RequestParam(required = false) String name){
+        return ResponseEntity.ok(service.getDealers(name,type));
     }
 
     @GetMapping("/{msisdn}")
@@ -35,8 +32,8 @@ public class DealerController {
         return ResponseEntity.ok(service.getDealerByMsisdn(msisdn));
     }
 
-    @PatchMapping("/{msisdn}/{status}")
-    public ResponseEntity<DealerResponse>  updateDealerStatus(@PathVariable String msisdn, @PathVariable String status, @RequestParam String password){
-        return ResponseEntity.ok(service.updateDealerStatus(msisdn, status, password));
+    @PatchMapping("/update/{msisdn}")
+    public ResponseEntity<DealerResponse>  updateDealerStatus(@PathVariable String msisdn,@Valid @RequestBody StatusUpdateRequest request){
+        return ResponseEntity.ok(service.updateDealer(msisdn, request));
     }
 }

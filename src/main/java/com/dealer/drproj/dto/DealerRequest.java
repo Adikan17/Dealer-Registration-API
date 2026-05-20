@@ -10,7 +10,7 @@ public class DealerRequest {
 
     @NotBlank(message="MSISDN is a mandatory feild.")
     @Pattern(
-        regexp="\\d{10}",
+        regexp="^\\d{10}$",
         message="MSISDN must exactly be of length 10 digits."
     )
     private String msisdn;
