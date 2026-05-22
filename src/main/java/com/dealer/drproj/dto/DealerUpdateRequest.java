@@ -1,14 +1,14 @@
 package com.dealer.drproj.dto;
 import jakarta.validation.constraints.*;
 
-public class StatusUpdateRequest {
+public class DealerUpdateRequest {
     @NotBlank(message="Password is mandatory.")
     private String password;
     private String status;
     private String name;
     private String type;
 
-    public StatusUpdateRequest(){}
+    public DealerUpdateRequest(){}
 
     public String getStatus(){return status;}
     public void setStatus(String status){this.status=status;}

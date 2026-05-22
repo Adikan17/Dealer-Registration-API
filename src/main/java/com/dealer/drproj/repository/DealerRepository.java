@@ -10,4 +10,6 @@ public interface DealerRepository extends JpaRepository<Dealer,String>{
     List<Dealer> findByType(DealerType Type);
     List<Dealer> findByName(String name);
     List<Dealer> findByNameAndType(String name,DealerType Type);
+    List<Dealer> findByTypeIn(List<DealerType> types);
+    List<Dealer> findByNameAndTypeIn(String name, List<DealerType> types);
 }
